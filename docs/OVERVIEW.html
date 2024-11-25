@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-OVERVIEW" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.6.3">
+<title data-rh="true">Overview | sched_ext</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sched-ext.com/img/scx_Full_Logo_Color.svg"><meta data-rh="true" name="twitter:image" content="https://sched-ext.com/img/scx_Full_Logo_Color.svg"><meta data-rh="true" property="og:url" content="https://sched-ext.com/docs/OVERVIEW"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Overview | sched_ext"><meta data-rh="true" name="description" content="sched_ext is a Linux kernel feature which"><meta data-rh="true" property="og:description" content="sched_ext is a Linux kernel feature which"><link data-rh="true" rel="icon" href="/img/scx_Icon_color.svg"><link data-rh="true" rel="canonical" href="https://sched-ext.com/docs/OVERVIEW"><link data-rh="true" rel="alternate" href="https://sched-ext.com/docs/OVERVIEW" hreflang="en"><link data-rh="true" rel="alternate" href="https://sched-ext.com/docs/OVERVIEW" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.78b9e322.css">
+<script src="/assets/js/runtime~main.216847f2.js" defer="defer"></script>
+<script src="/assets/js/main.1d8779ba.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/scx_Full_Logo_Color.svg" alt="sched_ext Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/scx_Full_Logo_Color.svg" alt="sched_ext Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">sched_ext</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/OVERVIEW">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/sched-ext/scx" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/OVERVIEW">Overview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/scheds">SCHED_EXT SCHEDULERS</a><button aria-label="Expand sidebar category &#x27;SCHED_EXT SCHEDULERS&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Overview</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Overview</h1></header>
+<p><a href="https://github.com/sched-ext/scx" target="_blank" rel="noopener noreferrer">sched_ext</a> is a Linux kernel feature which
+enables implementing and dynamically loading safe kernel thread schedulers in
+BPF.</p>
+<p>The benefits of such a framework are multifaceted, with there being three main
+axes where sched_ext is specifically designed to provide significant value:</p>
+<ol>
+<li>
+<p>Ease of experimentation and exploration: Enabling rapid iteration of new
+scheduling policies.</p>
+</li>
+<li>
+<p>Customization: Building application-specific schedulers which implement
+policies that are not applicable to general-purpose schedulers.</p>
+</li>
+<li>
+<p>Rapid scheduler deployments: Non-disruptive swap outs of scheduling
+policies in production environments.</p>
+</li>
+</ol>
+<p>We&#x27;ll begin by doing a deeper dive into the motivation of sched_ext in the
+following <a href="#motivation">Motivation</a> section. Following that, we&#x27;ll provide some
+deatils on the overall architecture of sched_ext in the <a href="#how">How</a> section
+below.</p>
+<h1>Motivation<a name="motivation"></a></h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-ease-of-experimentation-and-exploration">1. Ease of experimentation and exploration<a href="#1-ease-of-experimentation-and-exploration" class="hash-link" aria-label="Direct link to 1. Ease of experimentation and exploration" title="Direct link to 1. Ease of experimentation and exploration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-is-exploration-important">Why is exploration important?<a href="#why-is-exploration-important" class="hash-link" aria-label="Direct link to Why is exploration important?" title="Direct link to Why is exploration important?">​</a></h3>
+<p>Scheduling is a challenging problem space. Small changes in scheduling behavior
+can have a significant impact on various components of a system, with the
+corresponding effects varying widely across different platforms, architectures,
+and workloads.</p>
+<p>While complexities have always existed in scheduling, they have increased
+dramatically over the past 10-15 years. In the mid-late 2000s, cores were
+typically homogeneous and further apart from each other, with the criteria for
+scheduling being roughly the same across the entire die.</p>
+<p>Systems in the modern age are by comparison much more complex. Modern CPU
+designs, where the total power budget of all CPU cores often far exceeds the
+power budget of the socket, with dynamic frequency scaling, and with or without
+chiplets, have significantly expanded the scheduling problem space.  Cache
+hierarchies have become less uniform, with Core Complex (CCX) designs such as
+recent AMD processors having multiple shared L3 caches within a single socket.
+Such topologies resemble NUMA sans persistent NUMA node stickiness.</p>
+<p>Use-cases have become increasingly complex and diverse as well. Applications
+such as mobile and VR have strict latency requirements to avoid missing
+deadlines that impact user experience. Stacking workloads in servers is
+constantly pushing the demands on the scheduler in terms of workload isolation
+and resource distribution.</p>
+<p>Experimentation and exploration are important for any non-trivial problem
+space. However, given the recent hardware and software developments, we believe
+that experimentation and exploration are not just important, but <em>critical</em> in
+the scheduling problem space.</p>
+<p>Indeed, other approaches in industry are already being explored. AMD has
+proposed an experimental <a href="https://lore.kernel.org/lkml/20220910105326.1797-1-kprateek.nayak@amd.com/" target="_blank" rel="noopener noreferrer">patch
+set</a>
+which enables userspace to provide hints to the scheduler via &quot;Userspace
+Hinting&quot;. The approach adds a prctl() API which allows callers to set a
+numerical &quot;hint&quot; value on a struct task_struct. This hint is then optionally
+read by the scheduler to adjust the cost calculus for various scheduling
+decisions.</p>
+<p>Huawei have also <a href="https://lore.kernel.org/bpf/dedc7b72-9da4-91d0-d81d-75360c177188@huawei.com/" target="_blank" rel="noopener noreferrer">expressed
+interest</a>
+in enabling some form of programmable scheduling. While we&#x27;re unaware of any
+patch sets which have been sent to the upstream list for this proposal, it
+similarly illustrates the need for more flexibility in the scheduler.</p>
+<p>Additionally, Google has developed
+<a href="https://dl.acm.org/doi/pdf/10.1145/3477132.3483542" target="_blank" rel="noopener noreferrer">ghOSt</a> with the goal of
+enabling custom, userspace driven scheduling policies. Prior
+<a href="https://lpc.events/event/16/contributions/1365/" target="_blank" rel="noopener noreferrer">presentations</a> at LPC have
+discussed ghOSt and how BPF can be used to accelerate scheduling.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-cant-we-just-explore-directly-with-cfs">Why can&#x27;t we just explore directly with CFS?<a href="#why-cant-we-just-explore-directly-with-cfs" class="hash-link" aria-label="Direct link to Why can&#x27;t we just explore directly with CFS?" title="Direct link to Why can&#x27;t we just explore directly with CFS?">​</a></h3>
+<p>Experimenting with CFS directly or implementing a new sched_class from scratch
+is of course possible, but is often difficult and time consuming. Newcomers to
+the scheduler often require years to understand the codebase and become
+productive contributors. Even for seasoned kernel engineers, experimenting with
+and upstreaming features can take a very long time. The iteration process
+itself is also time consuming, as testing scheduler changes on real hardware
+requires reinstalling the kernel and rebooting the host.</p>
+<p>Core scheduling is an example of a feature that took a significant amount of
+time and effort to integrate into the kernel. Part of the difficulty with core
+scheduling was the inherent mismatch in abstraction between the desire to
+perform core-wide scheduling, and the per-cpu design of the kernel scheduler.
+This caused issues, for example ensuring proper fairness between the
+independent runqueues of SMT siblings.</p>
+<p>The high barrier to entry for working on the scheduler is an impediment to
+academia as well. Master&#x27;s/PhD candidates who are interested in improving the
+scheduler will spend years ramping-up, only to complete their degrees just as
+they&#x27;re finally ready to make significant changes. A lower entrance barrier
+would allow researchers to more quickly ramp up, test out hypotheses, and
+iterate on novel ideas. Research methodology is also severely hampered by the
+high barrier of entry to make modifications; for example, the
+<a href="https://www.usenix.org/system/files/nsdi19-ousterhout.pdf" target="_blank" rel="noopener noreferrer">Shenango</a> and
+Shinjuku scheduling policies used sched affinity to replicate the desired
+policy semantics, due to the difficulty of incorporating these policies into
+the kernel directly.</p>
+<p>The iterative process itself also imposes a significant cost to working on the
+scheduler. Testing changes requires developers to recompile and reinstall the
+kernel, reboot their machines, rewarm their workloads, and then finally rerun
+their benchmarks. Though some of this overhead could potentially be mitigated
+by enabling schedulers to be implemented as kernel modules, a machine crash or
+subtle system state corruption is always only one innocuous mistake away.
+These problems are exacerbated when testing production workloads in a
+datacenter environment as well, where multiple hosts may be involved in an
+experiment; requiring a significantly longer ramp up time. Warming up memcache
+instances in the Meta production environment takes hours, for example.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-sched_ext-help-with-exploration">How does sched_ext help with exploration?<a href="#how-does-sched_ext-help-with-exploration" class="hash-link" aria-label="Direct link to How does sched_ext help with exploration?" title="Direct link to How does sched_ext help with exploration?">​</a></h3>
+<p>sched_ext attempts to address all of the problems described above. In this
+section, we&#x27;ll describe the benefits to experimentation and exploration that
+are afforded by sched_ext, provide real-world examples of those benefits, and
+discuss some of the trade-offs and considerations in our design choices.</p>
+<p>One of our main goals was to lower the barrier to entry for experimenting
+with the scheduler. sched_ext provides ergonomic callbacks and helpers to
+ease common operations such as managing idle CPUs, scheduling tasks on
+arbitrary CPUs, handling preemptions from other scheduling classes, and
+more. While sched_ext does require some ramp-up, the complexity is
+self-contained, and the learning curve gradual. Developers can ramp up by
+first implementing simple policies such as global weighted vtime scheduling
+in only tens of lines of code, and then continue to learn the APIs and
+building blocks available with sched_ext as they build more featureful and
+complex schedulers.</p>
+<p>Another critical advantage provided by sched_ext is the use of BPF. BPF
+provides strong safety guarantees by statically analyzing programs at load
+time to ensure that they cannot corrupt or crash the system. sched_ext
+guarantees system integrity no matter what BPF scheduler is loaded, and
+provides mechanisms to safely disable the current BPF scheduler and migrate
+tasks back to a trusted scheduler. For example, we also implement in-kernel
+safety mechanisms to guarantee that a misbehaving scheduler cannot
+indefinitely starve tasks. BPF also enables sched_ext to significantly improve
+iteration speed for running experiments. Loading and unloading a BPF scheduler
+is simply a matter of running and terminating a sched_ext binary.</p>
+<p>BPF also provides programs with a rich set of APIs, such as maps, kfuncs, and
+BPF helpers. In addition to providing useful building blocks to programs that
+run entirely in kernel space (such as many of our example schedulers), these
+APIs also allow programs to leverage user space in making scheduling decisions.
+Specifically, the Atropos sample scheduler has a relatively simple weighted
+vtime or FIFO scheduling layer in BPF, paired with a load balancing component
+in userspace written in Rust. As described in more detail below, we also built
+a more general user-space scheduling framework called &quot;rhone&quot; by leveraging
+various BPF features.</p>
+<p>On the other hand, BPF does have shortcomings, as can be plainly seen from the
+complexity in some of the example schedulers. scx_pair.bpf.c illustrates this
+point well. To start, it requires a good amount of code to emulate
+cgroup-local-storage. In the kernel proper, this would simply be a matter of
+adding another pointer to the struct cgroup, but in BPF, it requires a complex
+juggling of data amongst multiple different maps, a good amount of boilerplate
+code, and some unwieldy <code>bpf_loop()</code>&#x27;s and atomics. The code is also littered
+with explicit and often unnecessary sanity checks to appease the verifier.</p>
+<p>That being said, BPF is being rapidly improved. For example, Yonghong Song
+recently upstreamed a
+<a href="https://lore.kernel.org/bpf/20221026042835.672317-1-yhs@fb.com/" target="_blank" rel="noopener noreferrer">patch set</a> to
+add a cgroup local storage map type, allowing scx_pair.bpf.c to be simplified.
+There are plans to address other issues as well, such as providing
+statically-verified locking, and avoiding the need for unnecessary sanity
+checks. Addressing these shortcomings is a high priority for BPF, and as
+progress continues to be made, we expect most deficiencies to be addressed in
+the not-too-distant future.</p>
+<p>Yet another exploration advantage of sched_ext is helping widening the scope
+of experiments. For example, sched_ext makes it easy to defer CPU assignment
+until a task starts executing, allowing schedulers to share scheduling queues
+at any granularity (hyper-twin, CCX and so on). Additionally, higher level
+frameworks can be built on top to further widen the scope. For example, the
+aforementioned <a href="https://github.com/Byte-Lab/rhone" target="_blank" rel="noopener noreferrer">rhone</a> library allows
+implementing scheduling policies in user-space by encapsulating the complexity
+around communicating scheduling decisions with the kernel. This allows taking
+advantage of a richer programming environment in user-space, enabling
+experimenting with, for instance, more complex mathematical models.</p>
+<p>sched_ext also allows developers to leverage machine learning. At Meta, we
+experimented with using machine learning to predict whether a running task
+would soon yield its CPU. These predictions can be used to aid the scheduler in
+deciding whether to keep a runnable task on its current CPU rather than
+migrating it to an idle CPU, with the hope of avoiding unnecessary cache
+misses. Using a tiny neural net model with only one hidden layer of size 16,
+and a decaying count of 64 syscalls as a feature, we were able to achieve a 15%
+throughput improvement on an Nginx benchmark, with an 87% inference accuracy.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-customization">2. Customization<a href="#2-customization" class="hash-link" aria-label="Direct link to 2. Customization" title="Direct link to 2. Customization">​</a></h2>
+<p>This section discusses how sched_ext can enable users to run workloads on
+application-specific schedulers.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-deploy-custom-schedulers-rather-than-improving-cfs">Why deploy custom schedulers rather than improving CFS?<a href="#why-deploy-custom-schedulers-rather-than-improving-cfs" class="hash-link" aria-label="Direct link to Why deploy custom schedulers rather than improving CFS?" title="Direct link to Why deploy custom schedulers rather than improving CFS?">​</a></h3>
+<p>Implementing application-specific schedulers and improving CFS are not
+conflicting goals. Scheduling features explored with sched_ext which yield
+beneficial results, and which are sufficiently generalizable, can and should
+be integrated into CFS. However, CFS is fundamentally designed to be a general
+purpose scheduler, and thus is not conducive to being extended with some
+highly targeted application or hardware specific changes.</p>
+<p>Targeted, bespoke scheduling has many potential use cases. For example, VM
+scheduling can make certain optimizations that are infeasible in CFS due to
+the constrained problem space (scheduling a static number of long-running
+VCPUs versus an arbitrary number of threads). Additionally, certain
+applications might want to make targeted policy decisions based on hints
+directly from the application (for example, a service that knows the different
+deadlines of incoming RPCs).</p>
+<p>Google has also experimented with some promising, novel scheduling policies.
+One example is &quot;central&quot; scheduling, wherein a single CPU makes all scheduling
+decisions for the entire system. This allows most cores on the system to be
+fully dedicated to running workloads, and can have significant performance
+improvements for certain use cases. For example, central scheduling with VCPUs
+can avoid expensive vmexits and cache flushes, by instead delegating the
+responsibility of preemption checks from the tick to a single CPU. See
+scx_central.bpf.c for a simple example of a central scheduling policy built in
+sched_ext.</p>
+<p>Some workloads also have non-generalizable constraints which enable
+optimizations in a scheduling policy which would otherwise not be feasible.
+For example,VM workloads at Google typically have a low overcommit ratio
+compared to the number of physical CPUs. This allows the scheduler to support
+bounded tail latencies, as well as longer blocks of uninterrupted time.</p>
+<p>Yet another interesting use case is the scx_flatcg scheduler, which provides a
+flattened hierarchical vtree for cgroups. This scheduler does not account for
+thundering herd problems among cgroups, and therefore may not be suitable for
+inclusion in CFS. However, in a simple benchmark using
+<a href="https://github.com/wg/wrk" target="_blank" rel="noopener noreferrer">wrk</a> on apache serving a CGI script calculating
+sha1sum of a small file, it outperformed CFS by ~3% with CPU controller
+disabled and by ~10% with two apache instances competing with 2:1 weight ratio
+nested four level deep.</p>
+<p>Certain industries require specific scheduling behaviors that do not apply
+broadly. For example, ARINC 653 defines scheduling behavior that is widely used
+by avionic software, and some out-of-tree implementations
+(<a href="https://ieeexplore.ieee.org/document/7005306" target="_blank" rel="noopener noreferrer">https://ieeexplore.ieee.org/document/7005306</a>) have been built. While the
+upstream community may decide to merge one such implementation in the future,
+it would also be entirely reasonable to not do so given the narrowness of
+use-case, and non-generalizable, strict requirements. Such cases can be well
+served by sched_ext in all stages of the software development lifecycle --
+development, testing, deployment and maintenance.</p>
+<p>There are also classes of policy exploration, such as machine learning, or
+responding in real-time to application hints, that are significantly harder
+(and not necessarily appropriate) to integrate within the kernel itself.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="wont-this-increase-fragmentation">Won&#x27;t this increase fragmentation?<a href="#wont-this-increase-fragmentation" class="hash-link" aria-label="Direct link to Won&#x27;t this increase fragmentation?" title="Direct link to Won&#x27;t this increase fragmentation?">​</a></h3>
+<p>We acknowledge that to some degree, sched_ext does run the risk of increasing
+the fragmentation of scheduler implementations. As a result of exploration,
+however, we believe that enabling the larger ecosystem to innovate will
+ultimately accelerate the overall development and performance of Linux.</p>
+<p>BPF programs are required to be GPLv2, which is enforced by the verifier on
+program loads. With regards to API stability, just as with other semi-internal
+interfaces such as BPF kfuncs, we won&#x27;t be providing any API stability
+guarantees to BPF schedulers. While we intend to make an effort to provide
+compatibility when possible, we will not provide any explicit, strong
+guarantees as the kernel typically does with e.g. UAPI headers. For users who
+decide to keep their schedulers out-of-tree,the licensing and maintenance
+overheads will be fundamentally the same as for carrying out-of-tree patches.</p>
+<p>With regards to the schedulers included in this patch set, and any other
+schedulers we implement in the future, both Meta and Google will open-source
+all of the schedulers we implement which have any relevance to the broader
+upstream community. We expect that some of these, such as the simple example
+schedulers and scx_rusty scheduler, will be upstreamed as part of the kernel
+tree. Distros will be able to package and release these schedulers with the
+kernel, allowing users to utilize these schedulers out-of-the-box without
+requiring any additional work or dependencies such as clang or building the
+scheduler programs themselves. Other schedulers and scheduling frameworks such
+as rhone may be open-sourced through separate per-project repos.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-rapid-scheduler-deployments">3. Rapid scheduler deployments<a href="#3-rapid-scheduler-deployments" class="hash-link" aria-label="Direct link to 3. Rapid scheduler deployments" title="Direct link to 3. Rapid scheduler deployments">​</a></h2>
+<p>Rolling out kernel upgrades is a slow and iterative process. At a large scale
+it can take months to roll a new kernel out to a fleet of servers. While this
+latency is expected and inevitable for normal kernel upgrades, it can become
+highly problematic when kernel changes are required to fix bugs.
+<a href="https://www.kernel.org/doc/html/latest/livepatch/livepatch.html" target="_blank" rel="noopener noreferrer">Livepatch</a> is
+available to quickly roll out critical security fixes to large fleets, but the
+scope of changes that can be applied with livepatching is fairly limited, and
+would likely not be usable for patching scheduling policies. With sched_ext,
+new scheduling policies can be rapidly rolled out to production environments.</p>
+<p>As an example, one of the variants of the <a href="https://www.intel.com/content/www/us/en/architecture-and-technology/l1tf.html" target="_blank" rel="noopener noreferrer">L1 Terminal Fault
+(L1TF)</a>
+vulnerability allows a VCPU running a VM to read arbitrary host kernel memory
+for pages in L1 data cache. The solution was to implement core scheduling,
+which ensures that tasks running as hypertwins have the same &quot;cookie&quot;.</p>
+<p>While core scheduling works well, it took a long time to finalize and land
+upstream. This long rollout period was painful, and required organizations to
+make difficult choices amongst a bad set of options. Some companies such as
+Google chose to implement and use their own custom L1TF-safe scheduler, others
+chose to run without hyper-threading enabled, and yet others left
+hyper-threading enabled and crossed their fingers.</p>
+<p>Once core scheduling was upstream, organizations had to upgrade the kernels on
+their entire fleets. As downtime is not an option for many, these upgrades had
+to be gradually rolled out, which can take a very long time for large fleets.</p>
+<p>An example of an sched_ext scheduler that illustrates core scheduling semantics
+is scx_pair.bpf.c, which co-schedules pairs of tasks from the same cgroup, and
+is resilient to L1TF vulnerabilities. While this example scheduler is certainly
+not suitable for production in its current form, a similar scheduler that is
+more performant and featureful could be written and deployed if necessary.</p>
+<p>Rapid scheduling deployments can similarly be useful to quickly roll-out new
+scheduling features without requiring kernel upgrades. At Google, for example,
+it was observed that some low-priority workloads were causing degraded
+performance for higher-priority workloads due to consuming a disproportionate
+share of memory bandwidth. While a temporary mitigation was to use sched
+affinity to limit the footprint of this low-priority workload to a small subset
+of CPUs, a preferable solution would be to implement a more featureful
+task-priority mechanism which automatically throttles lower-priority tasks
+which are causing memory contention for the rest of the system. Implementing
+this in CFS and rolling it out to the fleet could take a very long time.</p>
+<p>sched_ext would directly address these gaps. If another hardware bug or
+resource contention issue comes in that requires scheduler support to mitigate,
+sched_ext can be used to experiment with and test different policies. Once a
+scheduler is available, it can quickly be rolled out to as many hosts as
+necessary, and function as a stop-gap solution until a longer-term mitigation
+is upstreamed.</p>
+<h1>How</h1>
+<p>sched_ext is a new sched_class which allows scheduling policies to be
+implemented in BPF programs.</p>
+<p>sched_ext leverages BPF&#x27;s struct_ops feature to define a structure which
+exports function callbacks and flags to BPF programs that wish to implement
+scheduling policies. The struct_ops structure exported by sched_ext is struct
+sched_ext_ops, and is conceptually similar to struct sched_class. The role of
+sched_ext is to map the complex sched_class callbacks to the more simple and
+ergonomic struct sched_ext_ops callbacks.</p>
+<p>Unlike some other BPF program types which have ABI requirements due to
+exporting UAPIs, struct_ops has no ABI requirements whatsoever. This provides
+us with the flexibility to change the APIs provided to schedulers as necessary.
+BPF struct_ops is also already being used successfully in other subsystems,
+such as in support of TCP congestion control.</p>
+<p>The only struct_ops field that is required to be specified by a scheduler is
+the &#x27;name&#x27; field. Otherwise, sched_ext will provide sane default behavior, such
+as automatically choosing an idle CPU on the task wakeup path if .select_cpu()
+is missing.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dispatch-queues">Dispatch queues<a href="#dispatch-queues" class="hash-link" aria-label="Direct link to Dispatch queues" title="Direct link to Dispatch queues">​</a></h3>
+<p>To match the impedance between the scheduler core and the BPF scheduler,
+sched_ext uses DSQs (dispatch queues) which can operate as both a FIFO and a
+priority queue. By default, there is one global FIFO (<code>SCX_DSQ_GLOBAL</code>),
+and one local dsq per CPU (<code>SCX_DSQ_LOCAL</code>). The BPF scheduler can manage
+an arbitrary number of dsq&#x27;s using <code>scx_bpf_create_dsq()</code> and
+<code>scx_bpf_destroy_dsq()</code>.</p>
+<p>A CPU always executes a task from its local DSQ. A task is &quot;dispatched&quot; to a
+DSQ. A non-local DSQ is &quot;consumed&quot; to transfer a task to the consuming CPU&#x27;s
+local DSQ.</p>
+<p>When a CPU is looking for the next task to run, if the local DSQ is not
+empty, the first task is picked. Otherwise, the CPU tries to consume the
+global DSQ. If that doesn&#x27;t yield a runnable task either, <code>ops.dispatch()</code>
+is invoked.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scheduling-cycle">Scheduling cycle<a href="#scheduling-cycle" class="hash-link" aria-label="Direct link to Scheduling cycle" title="Direct link to Scheduling cycle">​</a></h3>
+<p>The following briefly shows how a waking task is scheduled and executed.</p>
+<ol>
+<li>
+<p>When a task is waking up, <code>ops.select_cpu()</code> is the first operation
+invoked. This serves two purposes. First, CPU selection optimization
+hint. Second, waking up the selected CPU if idle.</p>
+<p>The CPU selected by <code>ops.select_cpu()</code> is an optimization hint and not
+binding. The actual decision is made at the last step of scheduling.
+However, there is a small performance gain if the CPU
+<code>ops.select_cpu()</code> returns matches the CPU the task eventually runs on.</p>
+<p>A side-effect of selecting a CPU is waking it up from idle. While a BPF
+scheduler can wake up any cpu using the <code>scx_bpf_kick_cpu()</code> helper,
+using <code>ops.select_cpu()</code> judiciously can be simpler and more efficient.</p>
+<p>A task can be immediately dispatched to a DSQ from <code>ops.select_cpu()</code> by
+calling <code>scx_bpf_dispatch()</code>. If the task is dispatched to
+<code>SCX_DSQ_LOCAL</code> from <code>ops.select_cpu()</code>, it will be dispatched to the
+local DSQ of whichever CPU is returned from <code>ops.select_cpu()</code>.
+Additionally, dispatching directly from <code>ops.select_cpu()</code> will cause the
+<code>ops.enqueue()</code> callback to be skipped.</p>
+<p>Note that the scheduler core will ignore an invalid CPU selection, for
+example, if it&#x27;s outside the allowed cpumask of the task.</p>
+</li>
+<li>
+<p>Once the target CPU is selected, <code>ops.enqueue()</code> is invoked (unless the
+task was dispatched directly from <code>ops.select_cpu()</code>). <code>ops.enqueue()</code>
+can make one of the following decisions:</p>
+<ul>
+<li>
+<p>Immediately dispatch the task to either the global or local DSQ by
+calling <code>scx_bpf_dispatch()</code> with <code>SCX_DSQ_GLOBAL</code> or
+<code>SCX_DSQ_LOCAL</code>, respectively.</p>
+</li>
+<li>
+<p>Immediately dispatch the task to a custom DSQ by calling
+<code>scx_bpf_dispatch()</code> with a DSQ ID which is smaller than 2^63.</p>
+</li>
+<li>
+<p>Queue the task on the BPF side.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>When a CPU is ready to schedule, it first looks at its local DSQ. If
+empty, it then looks at the global DSQ. If there still isn&#x27;t a task to
+run, <code>ops.dispatch()</code> is invoked which can use the following two
+functions to populate the local DSQ.</p>
+<ul>
+<li>
+<p><code>scx_bpf_dispatch()</code> dispatches a task to a DSQ. Any target DSQ can
+be used - <code>SCX_DSQ_LOCAL</code>, <code>SCX_DSQ_LOCAL_ON | cpu</code>,
+<code>SCX_DSQ_GLOBAL</code> or a custom DSQ. While <code>scx_bpf_dispatch()</code>
+currently can&#x27;t be called with BPF locks held, this is being worked on
+and will be supported. <code>scx_bpf_dispatch()</code> schedules dispatching
+rather than performing them immediately. There can be up to
+<code>ops.dispatch_max_batch</code> pending tasks.</p>
+</li>
+<li>
+<p><code>scx_bpf_consume()</code> tranfers a task from the specified non-local DSQ
+to the dispatching DSQ. This function cannot be called with any BPF
+locks held. <code>scx_bpf_consume()</code> flushes the pending dispatched tasks
+before trying to consume the specified DSQ.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>After <code>ops.dispatch()</code> returns, if there are tasks in the local DSQ,
+the CPU runs the first one. If empty, the following steps are taken:</p>
+<ul>
+<li>
+<p>Try to consume the global DSQ. If successful, run the task.</p>
+</li>
+<li>
+<p>If <code>ops.dispatch()</code> has dispatched any tasks, retry #3.</p>
+</li>
+<li>
+<p>If the previous task is an SCX task and still runnable, keep executing
+it (see <code>SCX_OPS_ENQ_LAST</code>).</p>
+</li>
+<li>
+<p>Go idle.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Note that the BPF scheduler can always choose to dispatch tasks immediately in
+<code>ops.select_cpu()</code> or <code>ops.enqueue()</code>. If only the built-in DSQs are used,
+there is no need to implement <code>ops.dispatch()</code> as a task is never queued on
+the BPF scheduler and both the local and global DSQs are consumed
+automatically.</p>
+<p><code>scx_bpf_dispatch()</code> queues the task on the FIFO of the target DSQ. Use
+<code>scx_bpf_dispatch_vtime()</code> for the priority queue. Internal DSQs such as
+<code>SCX_DSQ_LOCAL</code> and <code>SCX_DSQ_GLOBAL</code> do not support priority-queue
+dispatching, and must be dispatched to with <code>scx_bpf_dispatch()</code>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="verifying-callback-behavior">Verifying callback behavior<a href="#verifying-callback-behavior" class="hash-link" aria-label="Direct link to Verifying callback behavior" title="Direct link to Verifying callback behavior">​</a></h3>
+<p>sched_ext always verifies that any value returned from a callback is valid, and
+will issue an error and unload the scheduler if it is not. For example, if
+<code>.select_cpu()</code> returns an invalid CPU, or if an attempt is made to invoke the
+<code>scx_bpf_dispatch()</code> with invalid enqueue flags. Furthermore, if a task remains
+runnable for too long without being scheduled, sched_ext will detect it and
+error-out the scheduler.</p>
+<h1>Closing Thoughts</h1>
+<p>Both Meta and Google have experimented quite a lot with schedulers in the last
+several years. Google has benchmarked various workloads using user space
+scheduling, and have achieved performance wins by trading off generality for
+application specific needs. At Meta, we are actively experimenting with
+multiple production workloads and seeing significant performance gains, and are
+in the process of deploying sched_ext schedulers on production workloads at
+scale. We expect to leverage it extensively to run various experiments and
+develop customized schedulers for a number of critical workloads.</p>
+<h1>Written By</h1>
+<ul>
+<li>David Vernet <a href="mailto:dvernet@meta.com" target="_blank" rel="noopener noreferrer">dvernet@meta.com</a></li>
+<li>Josh Don <a href="mailto:joshdon@google.com" target="_blank" rel="noopener noreferrer">joshdon@google.com</a></li>
+<li>Tejun Heo <a href="mailto:tj@kernel.org" target="_blank" rel="noopener noreferrer">tj@kernel.org</a></li>
+<li>Barret Rhoden <a href="mailto:brho@google.com" target="_blank" rel="noopener noreferrer">brho@google.com</a></li>
+</ul>
+<h1>Supported By</h1>
+<ul>
+<li>Paul Turner <a href="mailto:pjt@google.com" target="_blank" rel="noopener noreferrer">pjt@google.com</a></li>
+<li>Neel Natu <a href="mailto:neelnatu@google.com" target="_blank" rel="noopener noreferrer">neelnatu@google.com</a></li>
+<li>Patrick Bellasi <a href="mailto:derkling@google.com" target="_blank" rel="noopener noreferrer">derkling@google.com</a></li>
+<li>Hao Luo <a href="mailto:haoluo@google.com" target="_blank" rel="noopener noreferrer">haoluo@google.com</a></li>
+<li>Dimitrios Skarlatos <a href="mailto:dskarlat@cs.cmu.edu" target="_blank" rel="noopener noreferrer">dskarlat@cs.cmu.edu</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/OVERVIEW.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/scheds"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SCHED_EXT SCHEDULERS</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-ease-of-experimentation-and-exploration" class="table-of-contents__link toc-highlight">1. Ease of experimentation and exploration</a><ul><li><a href="#why-is-exploration-important" class="table-of-contents__link toc-highlight">Why is exploration important?</a></li><li><a href="#why-cant-we-just-explore-directly-with-cfs" class="table-of-contents__link toc-highlight">Why can&#39;t we just explore directly with CFS?</a></li><li><a href="#how-does-sched_ext-help-with-exploration" class="table-of-contents__link toc-highlight">How does sched_ext help with exploration?</a></li></ul></li><li><a href="#2-customization" class="table-of-contents__link toc-highlight">2. Customization</a><ul><li><a href="#why-deploy-custom-schedulers-rather-than-improving-cfs" class="table-of-contents__link toc-highlight">Why deploy custom schedulers rather than improving CFS?</a></li><li><a href="#wont-this-increase-fragmentation" class="table-of-contents__link toc-highlight">Won&#39;t this increase fragmentation?</a></li></ul></li><li><a href="#3-rapid-scheduler-deployments" class="table-of-contents__link toc-highlight">3. Rapid scheduler deployments</a><ul><li><a href="#dispatch-queues" class="table-of-contents__link toc-highlight">Dispatch queues</a></li><li><a href="#scheduling-cycle" class="table-of-contents__link toc-highlight">Scheduling cycle</a></li><li><a href="#verifying-callback-behavior" class="table-of-contents__link toc-highlight">Verifying callback behavior</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/OVERVIEW">Docs</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://bit.ly/scx_slack" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div></div></footer></div>
+</body>
+</html>
