@@ -17,9 +17,7 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p>
-         <a href="https://mostlynerdless.de/blog/2025/01/28/sched-ext-scheduler-contest-fosdem25/"> <img src="img/sched_contest.png" className="logoSvg" alt="contest_logo" /></a>
-        </p>
+
 </div>
     </header>
   );
