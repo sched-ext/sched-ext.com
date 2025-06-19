@@ -113,8 +113,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Slack',
-                href: 'https://bit.ly/scx_slack',
+                label: 'Discord',
+                href: 'https://discord.gg/b2J8DrWa7t',
               },
             ],
           },
