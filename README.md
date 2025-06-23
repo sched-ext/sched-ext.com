@@ -10,3 +10,7 @@ $ cd sched-ext/
 $ npm install
 $ npm run start
 ```
+To deploy
+```bash
+$ GIT_USER=<username> npm run deploy
+```
