@@ -3,7 +3,7 @@ RUST SCHEDULERS
 
 # Introduction
 
-This directory contains schedulers with user space rust components.
+This directory contains schedulers with user space `Rust` components.
 
 The README in each scheduler directory provides some background and describes
 the types of workloads or scenarios they're designed to accommodate.  For more
@@ -22,3 +22,4 @@ main.rs or \*.bpf.c files.
 - [scx_rustland](scx_rustland/README.md)
 - [scx_rusty](scx_rusty/README.md)
 - [scx_tickless](scx_tickless/README.md)
+- [scx_chaos](scx_chaos/README.md)
