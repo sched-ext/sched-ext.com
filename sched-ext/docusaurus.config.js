@@ -47,6 +47,7 @@ const config = {
           editUrl: ({ docPath }) =>
             `https://github.com/sched-ext/scx/blob/main/${docPath.replace(/^docs\//, '')}`,
         },
+        blog: false,
         // blog: {
         //   showReadingTime: true,
         //   feedOptions: {
